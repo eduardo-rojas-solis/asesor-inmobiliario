@@ -184,3 +184,49 @@ img {
     max-width: 240px;
   }
 }
+
+/* ------------- SECCIONES (Sobre mí, Servicios, Contacto) ------------- */
+.seccion {
+  margin-top: 48px;
+}
+
+.seccion h2 {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding-bottom: 6px;
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--color-acento);
+}
+
+/* --------------------- 2. SOBRE MÍ --------------------- */
+.datos {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* --------------------- 3. SERVICIOS -------------------- */
+/* Las tarjetas se acomodan solas: 3 por fila en computador, 1 en teléfono */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.servicio {
+  padding: 20px;
+  border-radius: var(--radio);
+  background: var(--color-tarjetas);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.servicio h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.servicio p {
+  margin-bottom: 0;
+}
