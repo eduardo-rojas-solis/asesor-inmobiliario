@@ -378,6 +378,23 @@ main,
   color: var(--color-acento);
 }
 
+/* Agenda de Google Calendar insertada (fondo blanco, como la de Google) */
+.agenda {
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--vidrio-borde);
+  border-radius: calc(var(--radio) - 4px);
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.agenda iframe {
+  display: block;
+  width: 100%;
+  height: 640px;  /* ✏️ alto de la agenda en computador */
+  border: 0;
+}
+
 /* ---------------- AJUSTES PARA TELÉFONOS ---------------- */
 @media (max-width: 760px) {
   .tarjeta {
@@ -401,6 +418,11 @@ main,
 
   .seccion {
     padding: 24px 20px;
+  }
+
+  /* En teléfono la agenda se ordena en una columna y necesita más alto */
+  .agenda iframe {
+    height: 760px;
   }
 }
 
