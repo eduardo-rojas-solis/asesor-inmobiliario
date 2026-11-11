@@ -28,40 +28,67 @@
 
   <main>
 
-    <!-- ================= 1. TARJETA DE PRESENTACIÓN ================= -->
-    <header class="tarjeta" id="inicio">
+    <!-- ================= 1. CARTA DE PRESENTACIÓN ================= -->
+    <!-- Ocupa la primera pantalla completa, como una tarjeta de presentación. -->
+    <div class="portada">
+      <header class="tarjeta" id="inicio">
 
-      <div class="tarjeta__foto">
-        <!-- ✏️ FOTO DE EDUARDO: para cambiarla, suba una foto nueva a assets/perfil
-             con el mismo nombre (foto-eduardo.webp). Vea el README, «Cambiar la foto». -->
-        <img src="assets/perfil/foto-eduardo.webp" alt="Fotografía de Eduardo Rojas Solís"
-             width="700" height="700" fetchpriority="high">
-      </div>
+        <!-- Columna izquierda: foto y datos de contacto -->
+        <div class="tarjeta__lateral">
+          <div class="tarjeta__foto">
+            <!-- ✏️ FOTO DE EDUARDO: para cambiarla, suba una foto nueva a assets/perfil
+                 con el mismo nombre (foto-eduardo.webp). Vea el README, «Cambiar la foto». -->
+            <img src="assets/perfil/foto-eduardo.webp" alt="Fotografía de Eduardo Rojas Solís"
+                 width="700" height="700" fetchpriority="high">
+          </div>
 
-      <div class="tarjeta__texto">
-        <h1>Eduardo Rojas Solís</h1>
-        <p class="tarjeta__rol">Corredor de propiedades</p>
+          <!-- ✏️ CORREO Y WHATSAPP: también aparecen en la sección Contacto.
+               <wbr> indica dónde puede cortarse el correo en pantallas chicas. -->
+          <p class="tarjeta__contacto">
+            <a href="mailto:e.rojas.solis.60@gmail.com">e.rojas.solis.60<wbr>@gmail.com</a>
+            <a href="https://wa.me/56932942338" target="_blank" rel="noopener">+56 9 3294 2338</a>
+          </p>
+        </div>
 
-        <!-- ✏️ FRASE DE PRESENTACIÓN: reemplace todo el <span> por el texto final. -->
-        <p class="tarjeta__intro">
-          <span class="pendiente">[PENDIENTE: frase breve de presentación, de 1 o 2 líneas]</span>
-        </p>
+        <!-- Columna derecha: nombre, presentación y botones -->
+        <div class="tarjeta__texto">
+          <h1>Eduardo Rojas Solís</h1>
+          <p class="tarjeta__rol">Corredor de propiedades</p>
 
-        <!-- Botones de acceso rápido.
-             ✏️ El botón "Agendar una reunión" se activa igual que en la sección Contacto
-             (vea el README, sección «Activar un botón»). -->
-        <nav class="botones" aria-label="Accesos rápidos">
-          <a class="boton boton--principal boton--pendiente" aria-disabled="true">
-            Agendar una reunión
-            <small>[PENDIENTE: enlace de agendamiento]</small>
-          </a>
-          <a class="boton" href="https://wa.me/56932942338" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="boton" href="#servicios">Ver servicios</a>
-          <a class="boton" href="#contacto">Contacto</a>
-        </nav>
-      </div>
+          <!-- ✏️ FRASE DE PRESENTACIÓN: reemplace todo el <span> por el texto final. -->
+          <p class="tarjeta__intro">
+            <span class="pendiente">[PENDIENTE: frase breve de presentación, de 1 o 2 líneas]</span>
+          </p>
 
-    </header>
+          <!-- ✏️ BOTONES DE LA CARTA (agenda y redes profesionales).
+               Para activar uno pendiente, vea el README, sección «Activar un botón».
+               Si una red no se va a usar, borre su bloque <a ...>...</a> completo. -->
+          <nav class="botones" aria-label="Agenda y redes profesionales">
+            <a class="boton boton--principal boton--pendiente" aria-disabled="true">
+              Agendar una reunión
+              <small>[PENDIENTE: enlace de agendamiento]</small>
+            </a>
+            <a class="boton" href="https://wa.me/56932942338" target="_blank" rel="noopener">
+              WhatsApp
+            </a>
+            <a class="boton" href="https://www.linkedin.com/in/eduardo-rojas-s-a6183550/" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+            <a class="boton" href="https://www.instagram.com/alaluf.valdivia/" target="_blank" rel="noopener">
+              Instagram
+            </a>
+            <a class="boton boton--pendiente" aria-disabled="true">
+              Facebook
+              <small>[PENDIENTE: enlace a la página]</small>
+            </a>
+            <a class="boton boton--interno" href="#servicios">
+              Ver servicios
+            </a>
+          </nav>
+        </div>
+
+      </header>
+    </div>
 
     <!-- ================= 2. SOBRE MÍ / EXPERIENCIA ================= -->
     <section class="seccion" id="sobre-mi">
@@ -132,27 +159,7 @@
         </a>
       </p>
 
-      <h3>Redes profesionales</h3>
-
-      <!-- ✏️ REDES: active cada botón cuando exista la cuenta (README, «Activar un botón»).
-           Si una red no se va a usar, borre su línea <li>...</li> completa. -->
-      <ul class="redes">
-        <li>
-          <a class="boton" href="https://www.linkedin.com/in/eduardo-rojas-s-a6183550/" target="_blank" rel="noopener">
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a class="boton boton--pendiente" aria-disabled="true">
-            Facebook <small>[PENDIENTE: enlace a la página]</small>
-          </a>
-        </li>
-        <li>
-          <a class="boton" href="https://www.instagram.com/alaluf.valdivia/" target="_blank" rel="noopener">
-            Instagram
-          </a>
-        </li>
-      </ul>
+      <!-- Las redes profesionales están en la carta de presentación (sección 1). -->
 
       <!-- FORMULARIO DE CONTACTO: NO implementado (opción a evaluar).
            GitHub Pages no puede recibir mensajes por sí solo; un formulario

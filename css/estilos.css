@@ -14,13 +14,19 @@
   --color-texto: #f5f1ea;       /* texto normal (claro, sobre el fondo oscuro) */
   --color-texto-suave: #cfd8e2; /* textos secundarios y pie de página */
 
-  /* Efecto "vidrio" de los recuadros */
-  --vidrio-fondo: rgba(20, 32, 46, 0.48);       /* color y transparencia del vidrio */
-  --vidrio-borde: rgba(255, 255, 255, 0.22);    /* borde fino del vidrio */
-  --vidrio-desenfoque: 16px;                    /* cuánto se difumina el fondo */
+  /* Efecto "vidrio" de los recuadros grandes */
+  --vidrio-fondo: rgba(20, 32, 46, 0.42);       /* color y transparencia del vidrio */
+  --vidrio-borde: rgba(255, 255, 255, 0.24);    /* borde fino del vidrio */
+  --vidrio-brillo: rgba(255, 255, 255, 0.28);   /* reflejo en el borde superior */
+  --vidrio-desenfoque: 14px;                    /* cuánto se difumina el fondo */
 
-  --radio: 16px;                /* qué tan redondeadas son las esquinas */
-  --ancho-maximo: 960px;        /* ancho máximo del contenido */
+  /* Efecto "cristal" de los botones */
+  --cristal-claro: rgba(255, 255, 255, 0.20);   /* parte más brillante del botón */
+  --cristal-oscuro: rgba(255, 255, 255, 0.04);  /* parte más transparente del botón */
+  --cristal-borde: rgba(255, 255, 255, 0.34);   /* borde del botón */
+
+  --radio: 18px;                /* qué tan redondeadas son las esquinas */
+  --ancho-maximo: 980px;        /* ancho máximo del contenido */
 }
 
 /* ------------------- BASE GENERAL -------------------- */
@@ -44,7 +50,7 @@ body {
 main {
   max-width: var(--ancho-maximo);
   margin: 0 auto;
-  padding: 24px 16px 48px;
+  padding: 0 16px 48px;
 }
 
 h1,
@@ -78,7 +84,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(10, 18, 28, 0.35) 0%, rgba(10, 18, 28, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(10, 18, 28, 0.30) 0%, rgba(10, 18, 28, 0.70) 100%);
 }
 
 /* Acercamiento lento de la foto, de ida y vuelta (45 segundos) */
@@ -92,15 +98,18 @@ body::after {
 }
 
 /* ---------------- RECUADROS DE VIDRIO ----------------
-   La tarjeta y cada sección se ven como vidrio esmerilado. */
+   La tarjeta y cada sección se ven como vidrio esmerilado,
+   con un reflejo claro en el borde superior. */
 .tarjeta,
 .seccion {
   background: var(--vidrio-fondo);
   border: 1px solid var(--vidrio-borde);
   border-radius: var(--radio);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-  -webkit-backdrop-filter: blur(var(--vidrio-desenfoque)) saturate(140%);
-  backdrop-filter: blur(var(--vidrio-desenfoque)) saturate(140%);
+  box-shadow:
+    inset 0 1px 0 var(--vidrio-brillo),
+    0 18px 50px rgba(0, 0, 0, 0.30);
+  -webkit-backdrop-filter: blur(var(--vidrio-desenfoque)) saturate(150%);
+  backdrop-filter: blur(var(--vidrio-desenfoque)) saturate(150%);
 }
 
 /* -------- MARCADORES [PENDIENTE] (fondo amarillo) --------
@@ -118,35 +127,45 @@ body::after {
 /* ------------------- PIE DE PÁGINA ------------------- */
 .pie {
   text-align: center;
-  padding: 24px 16px;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  padding: 24px 16px 32px;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-texto-suave);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* ===== Las secciones de la página se agregan debajo ===== */
+/* ============ 1. CARTA DE PRESENTACIÓN (primera pantalla) ============ */
 
-/* ------------ 1. TARJETA DE PRESENTACIÓN ------------- */
+/* La portada ocupa toda la altura de la pantalla y centra la carta */
+.portada {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 24px 0;
+}
+
 .tarjeta {
   display: grid;
-  grid-template-columns: 260px 1fr; /* foto a la izquierda, texto a la derecha */
-  gap: 32px;
+  grid-template-columns: 280px 1fr; /* foto a la izquierda, texto a la derecha */
+  gap: 36px;
   align-items: center;
+  width: 100%;
   padding: 32px;
 }
 
 .tarjeta h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  letter-spacing: -0.01em;
 }
 
 .tarjeta__rol {
-  margin: 0.25rem 0 1rem;
-  font-size: 0.9rem;
+  margin: 0.35rem 0 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-acento);
 }
@@ -165,49 +184,102 @@ body::after {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 75% center;
-  border-radius: var(--radio);
+  border-radius: calc(var(--radio) - 4px);
   border: 1px solid var(--vidrio-borde);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* ---------------------- BOTONES ---------------------- */
+/* Correo y WhatsApp bajo la foto */
+.tarjeta__contacto {
+  display: grid;
+  gap: 2px;
+  margin: 16px 0 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.tarjeta__contacto a {
+  color: var(--color-texto);
+  text-decoration: none;
+  overflow-wrap: break-word; /* evita que el correo se salga en pantallas chicas */
+}
+
+.tarjeta__contacto a:hover {
+  color: var(--color-acento);
+}
+
+/* ------------------ BOTONES DE CRISTAL ------------------
+   Grilla de botones: se acomodan solos en 3, 2 o 1 columna
+   según el ancho de la pantalla. */
 .botones {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 26px;
 }
 
 .boton {
-  display: inline-flex;
+  position: relative;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
+  justify-content: center;
+  gap: 4px;
+  min-height: 58px;
   max-width: 100%;
-  padding: 12px 18px;
-  border: 1px solid var(--color-acento);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
+  padding: 12px 38px 12px 16px;
+  border: 1px solid var(--cristal-borde);
+  border-radius: 14px;
+  /* Degradado de claro a transparente: da el aspecto de cristal */
+  background: linear-gradient(135deg, var(--cristal-claro) 0%, var(--cristal-oscuro) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),   /* reflejo superior */
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),  /* reflejo inferior */
+    0 8px 22px rgba(0, 0, 0, 0.22);            /* sombra */
   font-weight: 600;
-  color: inherit;
+  line-height: 1.25;
+  color: var(--color-texto);
   text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+/* Flecha ↗ en los botones que llevan a otra página */
+.boton[href^="http"]::after,
+.boton[href^="mailto"]::after {
+  content: "↗";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* Flecha ↓ en los botones que bajan dentro de la misma página */
+.boton--interno::after {
+  content: "↓";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  opacity: 0.75;
 }
 
 .boton:hover {
-  background: rgba(212, 180, 122, 0.22);
   transform: translateY(-2px);
+  border-color: rgba(212, 180, 122, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.08) 100%);
 }
 
-/* Botón destacado (por ejemplo, "Agendar una reunión") */
+/* Botón destacado (por ejemplo, "Agendar una reunión"): cristal dorado */
 .boton--principal,
 .boton--principal:hover {
-  background: var(--color-acento);
+  border-color: rgba(255, 236, 200, 0.7);
+  background: linear-gradient(135deg, rgba(236, 210, 160, 0.95) 0%, rgba(196, 160, 98, 0.85) 100%);
   color: var(--color-principal);
 }
 
 .boton small {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 400;
 }
 
@@ -233,17 +305,16 @@ body::after {
   padding: 32px;
 }
 
+.seccion:first-of-type {
+  margin-top: 0;
+}
+
 .seccion h2 {
   display: inline-block;
   margin: 0 0 16px;
   padding-bottom: 6px;
   font-size: 1.6rem;
   border-bottom: 3px solid var(--color-acento);
-}
-
-.seccion h3 {
-  margin: 32px 0 12px;
-  font-size: 1.15rem;
 }
 
 /* --------------------- 2. SOBRE MÍ --------------------- */
@@ -266,18 +337,19 @@ body::after {
 .servicio {
   padding: 20px;
   border: 1px solid var(--vidrio-borde);
-  border-radius: var(--radio);
-  background: rgba(255, 255, 255, 0.07);
+  border-radius: calc(var(--radio) - 4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: transform 0.2s, background 0.2s;
 }
 
 .servicio:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.12);
 }
 
 .seccion .servicio h3 {
   margin-top: 0;
+  font-size: 1.15rem;
 }
 
 .servicio p {
@@ -290,29 +362,47 @@ body::after {
   color: var(--color-acento);
 }
 
-.redes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 /* ---------------- AJUSTES PARA TELÉFONOS ---------------- */
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .tarjeta {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px;
+    gap: 20px;
+    padding: 22px;
   }
 
-  .tarjeta__foto {
-    max-width: 260px;
+  /* En teléfono: foto pequeña a la izquierda y contacto a su lado */
+  .tarjeta__lateral {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: end;
+  }
+
+  .tarjeta__contacto {
+    margin: 0;
+    font-size: 0.85rem;
   }
 
   .seccion {
     padding: 24px 20px;
+  }
+}
+
+/* En pantallas muy angostas, botones en 2 columnas parejas */
+@media (max-width: 420px) {
+  .botones {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .boton {
+    padding: 10px 30px 10px 12px;
+    font-size: 0.92rem;
+  }
+
+  .boton[href^="http"]::after,
+  .boton--interno::after {
+    right: 10px;
   }
 }
 
