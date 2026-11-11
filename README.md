@@ -30,8 +30,9 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 | Archivo o carpeta | Para qué sirve | ¿Lo edita Eduardo? |
 |---|---|---|
 | `index.html` | **Todos los textos** de la página | Sí |
-| `css/estilos.css` | Colores, tamaños y orden visual | Solo los colores |
-| `assets/perfil/` | Fotografía de perfil | Sí (subir la foto) |
+| `css/estilos.css` | Colores, tamaños, fondo y movimiento | Solo los colores |
+| `assets/perfil/` | Fotografía de perfil | Sí (para cambiar la foto) |
+| `assets/fondos/` | Foto de fondo (río de Valdivia) | Sí (para cambiar el fondo) |
 | `assets/logos/` | Logotipo, cuando exista | Más adelante |
 | `README.md` | Esta guía | No es necesario |
 
@@ -80,7 +81,8 @@ página publicada.
 
 ## 3. Activar un botón
 
-Los botones de agenda y redes están **desactivados** (no se pueden presionar)
+El correo, WhatsApp, LinkedIn e Instagram ya están activos. Los botones de
+**agenda** y **Facebook** siguen **desactivados** (no se pueden presionar)
 hasta que exista el enlace real. Para activar uno:
 
 1. Quite `boton--pendiente` y `aria-disabled="true"`.
@@ -88,18 +90,19 @@ hasta que exista el enlace real. Para activar uno:
    que se abra en una pestaña nueva.
 3. Borre la línea pequeña `<small>[PENDIENTE: ...]</small>`.
 
-**Ejemplo con LinkedIn. Antes:**
+**Ejemplo con Facebook. Antes:**
 ```html
 <a class="boton boton--pendiente" aria-disabled="true">
-  LinkedIn <small>[PENDIENTE: enlace al perfil]</small>
+  Facebook <small>[PENDIENTE: enlace a la página]</small>
 </a>
 ```
 **Después:**
 ```html
-<a class="boton" href="https://www.linkedin.com/in/su-perfil" target="_blank" rel="noopener">
-  LinkedIn
+<a class="boton" href="https://www.facebook.com/su-pagina" target="_blank" rel="noopener">
+  Facebook
 </a>
 ```
+(Puede guiarse por los botones de LinkedIn e Instagram, que ya están activos.)
 
 **Ejemplo con el botón de agenda** (aparece **dos veces**: en la tarjeta y en Contacto).
 **Antes:**
@@ -116,42 +119,42 @@ hasta que exista el enlace real. Para activar uno:
 </a>
 ```
 
-**El correo** se activa distinto. En la sección Contacto, reemplace el `<span ...>`
-por esta línea, cambiando **las dos** apariciones del correo:
-```html
-<a href="mailto:correo@gmail.com">correo@gmail.com</a>
-```
+**Si cambia el correo o el WhatsApp**, en la sección Contacto actualice
+**las dos** apariciones de cada dato: la que va dentro de `href="..."` (el enlace)
+y la que se ve en pantalla. En el enlace de WhatsApp el número va sin `+`,
+sin espacios ni guiones: `https://wa.me/56932942338`. El botón de WhatsApp de la
+tarjeta usa el mismo enlace.
 
 ---
 
 ## 4. Cambiar la foto
 
-**Paso 1: subir la foto**
+La foto actual es `assets/perfil/foto-eduardo.webp`. La forma más fácil de
+cambiarla es subir una nueva **con el mismo nombre**:
 
 1. En GitHub, entre a la carpeta `assets` y luego a `perfil`.
 2. Haga clic en **«Add file» → «Upload files»**.
-3. Arrastre la foto. Debe llamarse exactamente **`foto-eduardo.jpg`**
-   (vertical, idealmente de unos 800 × 1000 píxeles y menos de 500 KB).
-4. Haga clic en **«Commit changes»**.
+3. Arrastre la foto nueva, llamada exactamente **`foto-eduardo.webp`**
+   (idealmente de al menos 800 píxeles de ancho y menos de 500 KB).
+4. Haga clic en **«Commit changes»**. La foto anterior queda reemplazada.
 
-**Paso 2: mostrarla en la página**
-
-En `index.html`, busque `FOTO DE EDUARDO`.
-
-**Antes:**
+**Si la foto nueva es JPG** (`foto-eduardo.jpg`), busque `FOTO DE EDUARDO` en
+`index.html` y cambie el nombre dentro de `src="..."`:
 ```html
-<div class="foto-pendiente">
-  <span class="pendiente">[PENDIENTE: fotografía profesional de Eduardo]</span>
-</div>
-<!-- <img src="assets/perfil/foto-eduardo.jpg" alt="Fotografía de Eduardo Rojas Solís"> -->
-```
-**Después** (se borró el bloque `<div>` completo y los símbolos `<!--` y `-->` de la línea `<img>`):
-```html
-<img src="assets/perfil/foto-eduardo.jpg" alt="Fotografía de Eduardo Rojas Solís">
+<img src="assets/perfil/foto-eduardo.jpg" alt="Fotografía de Eduardo Rojas Solís"
 ```
 
-> Si la foto tiene otro nombre o formato (por ejemplo `.webp`), cambie también
-> el nombre dentro de `src="..."`.
+La página recorta la foto en forma vertical. Si Eduardo queda descentrado,
+en `css/estilos.css` cambie el valor `object-position: 75% center;`
+(un número menor muestra más la izquierda; uno mayor, más la derecha).
+
+### Cambiar la foto de fondo
+
+Funciona igual: suba la foto nueva a `assets/fondos/` con el nombre
+**`fondo-valdivia.webp`**. Conviene una foto horizontal y luminosa, de unos
+1920 píxeles de ancho y menos de 500 KB.
+
+Use solo fotos propias o con permiso de uso: la página es pública.
 
 ---
 
@@ -161,8 +164,16 @@ Abra `css/estilos.css`. Al principio está la sección **COLORES**. Cambie solo
 los códigos que empiezan con `#` (por ejemplo `#1f2d3d`). Cada línea tiene
 una explicación de dónde se usa ese color.
 
+En esa misma sección están los valores del **efecto vidrio** (transparencia y
+desenfoque de los recuadros).
+
 Los colores actuales son **provisorios**, hasta que se defina la identidad
 de marca.
+
+**Movimiento:** la foto de fondo se acerca muy lentamente y los recuadros
+aparecen con una transición suave. Todo está hecho solo con CSS. Si el teléfono
+o computador de quien visita tiene activada la opción «reducir movimiento»,
+las animaciones se desactivan solas.
 
 ---
 
@@ -214,7 +225,6 @@ Todos aparecen en la página con fondo amarillo. Para encontrarlos en
 
 | Sección | Dato pendiente |
 |---|---|
-| Tarjeta | Fotografía profesional de Eduardo |
 | Tarjeta | Frase breve de presentación (1 o 2 líneas) |
 | Tarjeta y Contacto | Enlace de la herramienta de agendamiento (botón «Agendar una reunión», 2 veces) |
 | Sobre mí | Descripción de la trayectoria como corredor de propiedades |
@@ -224,10 +234,9 @@ Todos aparecen en la página con fondo amarillo. Para encontrarlos en
 | Servicios | Nombre y descripción del servicio 1 |
 | Servicios | Nombre y descripción del servicio 2 |
 | Servicios | Nombre y descripción del servicio 3 |
-| Contacto | Correo profesional |
-| Contacto | Enlace a LinkedIn |
 | Contacto | Enlace a Facebook |
-| Contacto | Enlace a Instagram |
+
+**Datos ya completados:** fotografía, correo, WhatsApp, LinkedIn e Instagram.
 
 **Otros pendientes (no se ven en la página):**
 
@@ -251,11 +260,7 @@ Un formulario necesitaría un servicio externo. Antes de decidir, hay que evalua
 - Cómo evitar mensajes basura (spam).
 - Si realmente aporta más que el correo y el botón de agenda.
 
-Hasta que se decida, el contacto se hace por correo y por la agenda.
-
-### Teléfono o WhatsApp
-
-No se incluyó. Se puede agregar en la sección Contacto si Eduardo lo autoriza.
+Hasta que se decida, el contacto se hace por correo, WhatsApp y la agenda.
 
 ---
 
