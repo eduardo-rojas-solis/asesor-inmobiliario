@@ -43,7 +43,7 @@ La página tiene cuatro partes, en este orden:
    debajo, nombre, frase y botones de agenda y redes profesionales.
 2. **Sobre mí:** trayectoria y datos breves.
 3. **Servicios:** tarjetas con cada servicio.
-4. **Contacto:** correo, WhatsApp y agenda.
+4. **Contacto:** correo, WhatsApp y la agenda de Google Calendar insertada en la página.
 
 Dentro de `index.html`, cada lugar que se puede editar tiene un comentario
 que empieza con ✏️ y explica qué hacer. Los comentarios **no aparecen** en la
@@ -107,12 +107,20 @@ presentación, al comienzo de `index.html`. Para activar uno:
 ```
 (Puede guiarse por los botones de LinkedIn e Instagram, que ya están activos.)
 
-**Botón de agenda (Google Calendar).** Abre la agenda de citas de Eduardo:
-`https://calendar.app.google/5G6a5Nrcpf8XX6g29`. Aparece **dos veces** (en la
-carta y en Contacto). Si algún día cambia el enlace, reemplácelo en los dos
-lugares. Los horarios, la duración y el texto de la agenda **no** se editan
-aquí: se cambian en Google Calendar, en la agenda de citas, y la página toma
-los cambios sola.
+**Agenda (Google Calendar).** Está en dos formas:
+
+- **Botones** «Agendar una reunión» (en la carta) y «Abrir la agenda en una
+  pestaña nueva» (en Contacto), con el enlace corto
+  `https://calendar.app.google/5G6a5Nrcpf8XX6g29`.
+- **Agenda insertada** en la sección Contacto (un `<iframe>`), donde se puede
+  reservar sin salir de la página.
+
+Los horarios, la duración y el texto de la agenda **no** se editan aquí: se
+cambian en Google Calendar, en la agenda de citas, y la página los muestra sola.
+
+Si algún día se crea una agenda nueva, hay que cambiar el enlace de los dos
+botones y también el `src="..."` del `<iframe>`. Ese código se obtiene en Google
+Calendar: agenda de citas → **Compartir** → **Insertar agenda**.
 
 **Si cambia el correo o el WhatsApp**, búsquelos con `Cmd + F` / `Ctrl + F`:
 aparecen en la carta (bajo la foto y en el botón de WhatsApp) y en Contacto.
