@@ -17,6 +17,8 @@
   var COLOR = "255, 236, 200";           // color en formato R, G, B (dorado claro)
   var VELOCIDAD_MINIMA = 0.15;           // velocidad de subida (píxeles por cuadro)
   var VELOCIDAD_MAXIMA = 0.5;
+  var TAMANO_MINIMO = 0.4;               // radio de cada punto, en píxeles
+  var TAMANO_MAXIMO = 1.3;
   // --------------------------------------------------------
 
   var lienzo = document.getElementById("particulas");
@@ -37,7 +39,7 @@
     return {
       x: Math.random() * ancho,
       y: enCualquierLugar ? Math.random() * alto : alto + 10,
-      radio: 0.8 + Math.random() * 2.2,
+      radio: TAMANO_MINIMO + Math.random() * (TAMANO_MAXIMO - TAMANO_MINIMO),
       velocidad: VELOCIDAD_MINIMA + Math.random() * (VELOCIDAD_MAXIMA - VELOCIDAD_MINIMA),
       vaiven: Math.random() * Math.PI * 2, // para el movimiento suave de lado a lado
       brillo: 0.25 + Math.random() * 0.55
@@ -86,8 +88,8 @@
 
       // Halo suave alrededor del punto
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radio * 3, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(" + COLOR + ", " + p.brillo * 0.12 + ")";
+      ctx.arc(p.x, p.y, p.radio * 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(" + COLOR + ", " + p.brillo * 0.1 + ")";
       ctx.fill();
 
       // Punto de luz
