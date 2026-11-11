@@ -87,6 +87,22 @@ body::after {
   background: linear-gradient(180deg, rgba(10, 18, 28, 0.30) 0%, rgba(10, 18, 28, 0.70) 100%);
 }
 
+/* Partículas de luz (las dibuja js/particulas.js).
+   Quedan delante de la foto, pero detrás de los recuadros de vidrio. */
+#particulas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* no interfiere con los clics */
+}
+
+/* El contenido va por encima de las partículas */
+main,
+.pie {
+  position: relative;
+  z-index: 1;
+}
+
 /* Acercamiento lento de la foto, de ida y vuelta (45 segundos) */
 @keyframes fondo-movimiento {
   from {
