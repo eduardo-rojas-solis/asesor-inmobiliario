@@ -89,18 +89,6 @@ body::after {
   }
 }
 
-/* Aparición suave de los recuadros al cargar la página */
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ---------------- RECUADROS DE VIDRIO ----------------
    La tarjeta y cada sección se ven como vidrio esmerilado. */
 .tarjeta,
@@ -111,7 +99,6 @@ body::after {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
   -webkit-backdrop-filter: blur(var(--vidrio-desenfoque)) saturate(140%);
   backdrop-filter: blur(var(--vidrio-desenfoque)) saturate(140%);
-  animation: aparecer 0.8s ease-out both;
 }
 
 /* -------- MARCADORES [PENDIENTE] (fondo amarillo) --------
@@ -331,9 +318,7 @@ body::after {
    Si el teléfono o computador tiene activada la opción
    "reducir movimiento", se desactivan las animaciones. */
 @media (prefers-reduced-motion: reduce) {
-  body::before,
-  .tarjeta,
-  .seccion {
+  body::before {
     animation: none;
   }
 

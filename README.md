@@ -170,8 +170,8 @@ desenfoque de los recuadros).
 Los colores actuales son **provisorios**, hasta que se defina la identidad
 de marca.
 
-**Movimiento:** la foto de fondo se acerca muy lentamente y los recuadros
-aparecen con una transición suave. Todo está hecho solo con CSS. Si el teléfono
+**Movimiento:** la foto de fondo se acerca muy lentamente y los botones y
+servicios se elevan un poco al pasar el mouse. Todo está hecho solo con CSS. Si el teléfono
 o computador de quien visita tiene activada la opción «reducir movimiento»,
 las animaciones se desactivan solas.
 
