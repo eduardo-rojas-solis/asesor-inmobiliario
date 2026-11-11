@@ -1,0 +1,9 @@
+# Archivos que NO se suben a GitHub.
+# El repositorio es público (requisito de GitHub Pages gratuito),
+# así que aquí se excluyen documentos privados y archivos del sistema.
+
+# Plan interno del proyecto (contiene información personal y familiar)
+PLAN-PRIVADO.md
+
+# Archivos que crea macOS automáticamente
+.DS_Store

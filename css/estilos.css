@@ -1,0 +1,78 @@
+/* ==========================================================
+   ESTILOS DE LA PÁGINA DE EDUARDO ROJAS SOLÍS
+
+   Para cambiar los colores de toda la página, edite SOLO
+   los valores de la sección "COLORES" que está aquí abajo.
+   Los colores actuales son PROVISORIOS hasta definir la
+   identidad de marca (Etapa 3 del proyecto).
+   ========================================================== */
+
+/* ---------------------- COLORES ---------------------- */
+:root {
+  --color-principal: #1f2d3d;   /* azul oscuro: tarjeta y títulos */
+  --color-acento: #b08d57;      /* dorado suave: botones y detalles */
+  --color-fondo: #f5f1ea;       /* arena claro: fondo de la página */
+  --color-tarjetas: #ffffff;    /* fondo de las tarjetas de servicios */
+  --color-texto: #2b2b2b;       /* texto normal */
+  --color-texto-claro: #f5f1ea; /* texto sobre fondo oscuro */
+
+  --radio: 14px;                /* qué tan redondeadas son las esquinas */
+  --ancho-maximo: 960px;        /* ancho máximo del contenido */
+}
+
+/* ------------------- BASE GENERAL -------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* desplazamiento suave al usar los botones */
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+}
+
+main {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: var(--color-principal);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* -------- MARCADORES [PENDIENTE] (fondo amarillo) --------
+   Cuando un dato todavía no existe se marca con
+   class="pendiente" para que se note a simple vista. */
+.pendiente {
+  background: #fff3b0;
+  color: #5c4a00;
+  border: 1px dashed #c9a400;
+  border-radius: 4px;
+  padding: 0 0.3em;
+  font-weight: 600;
+}
+
+/* ------------------- PIE DE PÁGINA ------------------- */
+.pie {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+}
+
+/* ===== Las secciones de la página se agregan debajo ===== */
