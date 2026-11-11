@@ -230,3 +230,31 @@ img {
 .servicio p {
   margin-bottom: 0;
 }
+
+/* --------------------- 4. CONTACTO --------------------- */
+.contacto__correo a {
+  font-weight: 600;
+  color: var(--color-principal);
+}
+
+.seccion h3 {
+  margin: 32px 0 12px;
+  font-size: 1.15rem;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Los marcadores dentro de botones pendientes también se destacan */
+.boton--pendiente small {
+  background: #fff3b0;
+  color: #5c4a00;
+  border-radius: 4px;
+  padding: 0 0.3em;
+}

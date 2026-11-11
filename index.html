@@ -41,6 +41,18 @@
         <p class="tarjeta__intro">
           <span class="pendiente">[PENDIENTE: frase breve de presentación, de 1 o 2 líneas]</span>
         </p>
+
+        <!-- Botones de acceso rápido.
+             ✏️ El botón "Agendar una reunión" se activa igual que en la sección Contacto
+             (vea el README, sección «Activar un botón»). -->
+        <nav class="botones" aria-label="Accesos rápidos">
+          <a class="boton boton--principal boton--pendiente" aria-disabled="true">
+            Agendar una reunión
+            <small>[PENDIENTE: enlace de agendamiento]</small>
+          </a>
+          <a class="boton" href="#servicios">Ver servicios</a>
+          <a class="boton" href="#contacto">Contacto</a>
+        </nav>
       </div>
 
     </header>
@@ -87,6 +99,55 @@
         </article>
 
       </div>
+    </section>
+
+    <!-- ======================== 4. CONTACTO ======================== -->
+    <section class="seccion" id="contacto">
+      <h2>Contacto</h2>
+
+      <!-- ✏️ CORREO: cuando exista, reemplace el <span> por esta línea
+           (cambiando las DOS apariciones de correo@gmail.com por el correo real):
+           <a href="mailto:correo@gmail.com">correo@gmail.com</a> -->
+      <p class="contacto__correo">
+        <strong>Correo:</strong>
+        <span class="pendiente">[PENDIENTE: correo profesional de Eduardo]</span>
+      </p>
+
+      <!-- ✏️ AGENDA: vea el README, sección «Activar un botón». -->
+      <p>
+        <a class="boton boton--principal boton--pendiente" aria-disabled="true">
+          Agendar una reunión
+          <small>[PENDIENTE: enlace de la herramienta de agendamiento]</small>
+        </a>
+      </p>
+
+      <h3>Redes profesionales</h3>
+
+      <!-- ✏️ REDES: active cada botón cuando exista la cuenta (README, «Activar un botón»).
+           Si una red no se va a usar, borre su línea <li>...</li> completa. -->
+      <ul class="redes">
+        <li>
+          <a class="boton boton--pendiente" aria-disabled="true">
+            LinkedIn <small>[PENDIENTE: enlace al perfil]</small>
+          </a>
+        </li>
+        <li>
+          <a class="boton boton--pendiente" aria-disabled="true">
+            Facebook <small>[PENDIENTE: enlace a la página]</small>
+          </a>
+        </li>
+        <li>
+          <a class="boton boton--pendiente" aria-disabled="true">
+            Instagram <small>[PENDIENTE: enlace a la cuenta]</small>
+          </a>
+        </li>
+      </ul>
+
+      <!-- FORMULARIO DE CONTACTO: NO implementado (opción a evaluar).
+           GitHub Pages no puede recibir mensajes por sí solo; un formulario
+           necesitaría un servicio externo. Antes de agregarlo hay que evaluar
+           costo, límites del plan gratuito, privacidad de los datos y spam.
+           Ver README, sección «Opciones a evaluar». -->
     </section>
 
   </main>
