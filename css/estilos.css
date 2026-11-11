@@ -35,7 +35,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  /* Avenir en Mac y iPhone; DM Sans (Google Fonts) en Windows y Android */
+  font-family: "Avenir Next", Avenir, "DM Sans", system-ui, sans-serif;
   line-height: 1.6;
   color: var(--color-texto);
 }
