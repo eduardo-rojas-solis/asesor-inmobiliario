@@ -83,9 +83,9 @@ página publicada.
 
 ## 3. Activar un botón
 
-El correo, WhatsApp, LinkedIn e Instagram ya están activos. Los botones de
-**agenda** y **Facebook** siguen **desactivados** (no se pueden presionar)
-hasta que exista el enlace real. Los botones de redes están en la carta de
+El correo, WhatsApp, la agenda, LinkedIn e Instagram ya están activos. Solo
+el botón de **Facebook** sigue **desactivado** (no se puede presionar) hasta
+que exista el enlace real. Los botones de redes están en la carta de
 presentación, al comienzo de `index.html`. Para activar uno:
 
 1. Quite `boton--pendiente` y `aria-disabled="true"`.
@@ -107,20 +107,12 @@ presentación, al comienzo de `index.html`. Para activar uno:
 ```
 (Puede guiarse por los botones de LinkedIn e Instagram, que ya están activos.)
 
-**Ejemplo con el botón de agenda** (aparece **dos veces**: en la carta y en Contacto).
-**Antes:**
-```html
-<a class="boton boton--principal boton--pendiente" aria-disabled="true">
-  Agendar una reunión
-  <small>[PENDIENTE: enlace de agendamiento]</small>
-</a>
-```
-**Después:**
-```html
-<a class="boton boton--principal" href="ENLACE-DE-LA-AGENDA" target="_blank" rel="noopener">
-  Agendar una reunión
-</a>
-```
+**Botón de agenda (Google Calendar).** Abre la agenda de citas de Eduardo:
+`https://calendar.app.google/5G6a5Nrcpf8XX6g29`. Aparece **dos veces** (en la
+carta y en Contacto). Si algún día cambia el enlace, reemplácelo en los dos
+lugares. Los horarios, la duración y el texto de la agenda **no** se editan
+aquí: se cambian en Google Calendar, en la agenda de citas, y la página toma
+los cambios sola.
 
 **Si cambia el correo o el WhatsApp**, búsquelos con `Cmd + F` / `Ctrl + F`:
 aparecen en la carta (bajo la foto y en el botón de WhatsApp) y en Contacto.
@@ -244,7 +236,6 @@ Todos aparecen en la página con fondo amarillo. Para encontrarlos en
 | Sección | Dato pendiente |
 |---|---|
 | Carta | Frase breve de presentación (1 o 2 líneas) |
-| Carta y Contacto | Enlace de la herramienta de agendamiento (botón «Agendar una reunión», 2 veces) |
 | Sobre mí | Descripción de la trayectoria como corredor de propiedades |
 | Sobre mí | Años de experiencia en el rubro |
 | Sobre mí | Zona de trabajo (ciudades o comunas) |
@@ -254,7 +245,8 @@ Todos aparecen en la página con fondo amarillo. Para encontrarlos en
 | Servicios | Nombre y descripción del servicio 3 |
 | Carta | Enlace a Facebook |
 
-**Datos ya completados:** fotografía, correo, WhatsApp, LinkedIn e Instagram.
+**Datos ya completados:** fotografía, correo, WhatsApp, agenda (Google Calendar),
+LinkedIn e Instagram.
 
 **Otros pendientes (no se ven en la página):**
 
