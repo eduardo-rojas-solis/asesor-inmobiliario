@@ -30,7 +30,8 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 | Archivo o carpeta | Para qué sirve | ¿Lo edita Eduardo? |
 |---|---|---|
 | `index.html` | **Todos los textos** de la página | Sí |
-| `css/estilos.css` | Colores, tamaños, fondo y movimiento | Solo los colores |
+| `css/estilos.css` | Colores, tamaños, fondo y efecto vidrio | Solo los colores |
+| `js/particulas.js` | Partículas de luz en movimiento | No es necesario |
 | `assets/perfil/` | Fotografía de perfil | Sí (para cambiar la foto) |
 | `assets/fondos/` | Foto de fondo (río de Valdivia) | Sí (para cambiar el fondo) |
 | `assets/logos/` | Logotipo, cuando exista | Más adelante |
@@ -38,10 +39,11 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 
 La página tiene cuatro partes, en este orden:
 
-1. **Tarjeta de presentación:** foto, nombre, frase y botones.
+1. **Carta de presentación** (primera pantalla): foto con correo y WhatsApp
+   debajo, nombre, frase y botones de agenda y redes profesionales.
 2. **Sobre mí:** trayectoria y datos breves.
 3. **Servicios:** tarjetas con cada servicio.
-4. **Contacto:** correo, agenda y redes profesionales.
+4. **Contacto:** correo, WhatsApp y agenda.
 
 Dentro de `index.html`, cada lugar que se puede editar tiene un comentario
 que empieza con ✏️ y explica qué hacer. Los comentarios **no aparecen** en la
@@ -83,7 +85,8 @@ página publicada.
 
 El correo, WhatsApp, LinkedIn e Instagram ya están activos. Los botones de
 **agenda** y **Facebook** siguen **desactivados** (no se pueden presionar)
-hasta que exista el enlace real. Para activar uno:
+hasta que exista el enlace real. Los botones de redes están en la carta de
+presentación, al comienzo de `index.html`. Para activar uno:
 
 1. Quite `boton--pendiente` y `aria-disabled="true"`.
 2. Agregue `href="..."` con el enlace, y `target="_blank" rel="noopener"` para
@@ -104,7 +107,7 @@ hasta que exista el enlace real. Para activar uno:
 ```
 (Puede guiarse por los botones de LinkedIn e Instagram, que ya están activos.)
 
-**Ejemplo con el botón de agenda** (aparece **dos veces**: en la tarjeta y en Contacto).
+**Ejemplo con el botón de agenda** (aparece **dos veces**: en la carta y en Contacto).
 **Antes:**
 ```html
 <a class="boton boton--principal boton--pendiente" aria-disabled="true">
@@ -119,11 +122,12 @@ hasta que exista el enlace real. Para activar uno:
 </a>
 ```
 
-**Si cambia el correo o el WhatsApp**, en la sección Contacto actualice
-**las dos** apariciones de cada dato: la que va dentro de `href="..."` (el enlace)
-y la que se ve en pantalla. En el enlace de WhatsApp el número va sin `+`,
-sin espacios ni guiones: `https://wa.me/56932942338`. El botón de WhatsApp de la
-tarjeta usa el mismo enlace.
+**Si cambia el correo o el WhatsApp**, búsquelos con `Cmd + F` / `Ctrl + F`:
+aparecen en la carta (bajo la foto y en el botón de WhatsApp) y en Contacto.
+En cada lugar cambie el enlace (dentro de `href="..."`) y el texto que se ve.
+En el enlace de WhatsApp el número va sin `+`, sin espacios ni guiones:
+`https://wa.me/56932942338`. En el correo de la carta hay un `<wbr>` antes de
+la `@`: sirve para que el correo se corte bien en teléfonos; consérvelo.
 
 ---
 
@@ -135,7 +139,7 @@ cambiarla es subir una nueva **con el mismo nombre**:
 1. En GitHub, entre a la carpeta `assets` y luego a `perfil`.
 2. Haga clic en **«Add file» → «Upload files»**.
 3. Arrastre la foto nueva, llamada exactamente **`foto-eduardo.webp`**
-   (idealmente de al menos 800 píxeles de ancho y menos de 500 KB).
+   (de unos 700 píxeles de ancho y menos de 100 KB, para que cargue rápido).
 4. Haga clic en **«Commit changes»**. La foto anterior queda reemplazada.
 
 **Si la foto nueva es JPG** (`foto-eduardo.jpg`), busque `FOTO DE EDUARDO` en
@@ -152,7 +156,11 @@ en `css/estilos.css` cambie el valor `object-position: 75% center;`
 
 Funciona igual: suba la foto nueva a `assets/fondos/` con el nombre
 **`fondo-valdivia.webp`**. Conviene una foto horizontal y luminosa, de unos
-1920 píxeles de ancho y menos de 500 KB.
+1440 píxeles de ancho y menos de 200 KB.
+
+**Para que la página cargue rápido**, use siempre formato **WEBP**. Puede
+convertir y achicar fotos gratis en https://squoosh.app (elija «WebP»,
+calidad 60–80 y el ancho indicado arriba).
 
 Use solo fotos propias o con permiso de uso: la página es pública.
 
@@ -164,16 +172,26 @@ Abra `css/estilos.css`. Al principio está la sección **COLORES**. Cambie solo
 los códigos que empiezan con `#` (por ejemplo `#1f2d3d`). Cada línea tiene
 una explicación de dónde se usa ese color.
 
-En esa misma sección están los valores del **efecto vidrio** (transparencia y
-desenfoque de los recuadros).
+En esa misma sección están los valores del **efecto vidrio** de los recuadros
+y del **efecto cristal** de los botones (transparencia, brillo y desenfoque).
 
 Los colores actuales son **provisorios**, hasta que se defina la identidad
 de marca.
 
-**Movimiento:** la foto de fondo se acerca muy lentamente y los botones y
-servicios se elevan un poco al pasar el mouse. Todo está hecho solo con CSS. Si el teléfono
-o computador de quien visita tiene activada la opción «reducir movimiento»,
-las animaciones se desactivan solas.
+**Fuente:** en Mac y iPhone la página usa **Avenir**, que viene instalada.
+En Windows y Android usa **DM Sans**, una fuente gratuita muy parecida que se
+carga desde Google Fonts.
+
+**Movimiento:**
+
+- La foto de fondo se acerca muy lentamente.
+- Partículas de luz suben despacio por la pantalla (archivo `js/particulas.js`).
+  Para quitarlas, borre en `index.html` la línea
+  `<script src="js/particulas.js" defer></script>`.
+- Los botones y servicios se elevan un poco al pasar el mouse.
+
+Si el teléfono o computador de quien visita tiene activada la opción
+«reducir movimiento», las animaciones se desactivan solas.
 
 ---
 
@@ -225,8 +243,8 @@ Todos aparecen en la página con fondo amarillo. Para encontrarlos en
 
 | Sección | Dato pendiente |
 |---|---|
-| Tarjeta | Frase breve de presentación (1 o 2 líneas) |
-| Tarjeta y Contacto | Enlace de la herramienta de agendamiento (botón «Agendar una reunión», 2 veces) |
+| Carta | Frase breve de presentación (1 o 2 líneas) |
+| Carta y Contacto | Enlace de la herramienta de agendamiento (botón «Agendar una reunión», 2 veces) |
 | Sobre mí | Descripción de la trayectoria como corredor de propiedades |
 | Sobre mí | Años de experiencia en el rubro |
 | Sobre mí | Zona de trabajo (ciudades o comunas) |
@@ -234,7 +252,7 @@ Todos aparecen en la página con fondo amarillo. Para encontrarlos en
 | Servicios | Nombre y descripción del servicio 1 |
 | Servicios | Nombre y descripción del servicio 2 |
 | Servicios | Nombre y descripción del servicio 3 |
-| Contacto | Enlace a Facebook |
+| Carta | Enlace a Facebook |
 
 **Datos ya completados:** fotografía, correo, WhatsApp, LinkedIn e Instagram.
 
@@ -276,7 +294,9 @@ Este repositorio es **público**: cualquier persona puede ver todo lo que se sub
 
 ## Notas técnicas (para Benjamín)
 
-- HTML y CSS puros. Sin JavaScript, frameworks, dependencias ni compilación.
+- HTML y CSS, más un único archivo de JavaScript simple (`js/particulas.js`)
+  solo para el efecto decorativo. Sin frameworks, librerías ni compilación.
+- Única carga externa: la fuente DM Sans desde Google Fonts.
 - Todas las rutas son relativas; el sitio no depende del usuario ni de la URL final.
 - Las secciones del HTML y del CSS están numeradas igual (1 a 4).
 - `PLAN-PRIVADO.md` (plan interno del proyecto) está en `.gitignore` y no se sube.
