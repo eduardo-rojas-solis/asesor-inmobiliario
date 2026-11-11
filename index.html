@@ -11,6 +11,10 @@
   <title>Eduardo Rojas Solís · Corredor de propiedades</title>
   <meta name="description" content="Eduardo Rojas Solís, corredor de propiedades.">
 
+  <!-- Precarga de las imágenes principales para que aparezcan antes -->
+  <link rel="preload" as="image" href="assets/fondos/fondo-valdivia.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/perfil/foto-eduardo.webp" type="image/webp">
+
   <!-- Hoja de estilos (colores, tamaños y ordenamiento de la página) -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -25,7 +29,7 @@
         <!-- ✏️ FOTO DE EDUARDO: para cambiarla, suba una foto nueva a assets/perfil
              con el mismo nombre (foto-eduardo.webp). Vea el README, «Cambiar la foto». -->
         <img src="assets/perfil/foto-eduardo.webp" alt="Fotografía de Eduardo Rojas Solís"
-             width="1254" height="1254">
+             width="700" height="700" fetchpriority="high">
       </div>
 
       <div class="tarjeta__texto">

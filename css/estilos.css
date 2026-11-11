@@ -68,6 +68,7 @@ body::before {
   z-index: -2;
   background: url("../assets/fondos/fondo-valdivia.webp") center / cover no-repeat;
   animation: fondo-movimiento 45s ease-in-out infinite alternate;
+  will-change: transform; /* le avisa al navegador que esta capa se mueve (más fluido) */
 }
 
 /* Capa oscura sobre la foto para que el texto se lea bien */
