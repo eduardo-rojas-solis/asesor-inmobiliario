@@ -109,7 +109,7 @@ la línea `<small>[PENDIENTE: ...]</small>`.
 
 - **Botones** «Agendar una reunión» (en la carta) y «Abrir la agenda en una
   pestaña nueva» (en Contacto), con el enlace corto
-  `https://calendar.app.google/5G6a5Nrcpf8XX6g29`.
+  `https://calendar.app.google/xwgySCck4AAzcYtR7`.
 - **Agenda insertada** en la sección Contacto (un `<iframe>`), donde se puede
   reservar sin salir de la página.
 
