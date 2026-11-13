@@ -234,6 +234,11 @@ main,
   margin-top: 26px;
 }
 
+/* Si la cantidad de botones es impar, el último ocupa el ancho completo */
+.botones .boton:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .boton {
   position: relative;
   display: flex;

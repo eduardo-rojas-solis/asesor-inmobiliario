@@ -86,7 +86,7 @@ página publicada.
 
 ## 3. Activar un botón
 
-Todos los botones están activos: agenda, WhatsApp, LinkedIn y «Ver propiedades».
+Todos los botones están activos: agenda, WhatsApp, LinkedIn, «Mi CV» (Google Drive) y «Ver propiedades».
 Están en la carta de presentación, al comienzo de `index.html`.
 
 **Para agregar una red nueva** (por ejemplo, si más adelante abre un Instagram
@@ -300,6 +300,11 @@ agenda (Google Calendar de eduardorojas.s@gmail.com) y LinkedIn.
       (ver sección 7, «Tarjeta del repositorio en GitHub»).
 - [ ] Actualizar el LinkedIn de Eduardo (titular y «Acerca de») para que diga
       lo mismo que la página: asesor inmobiliario y corredor de propiedades en Valdivia.
+- [ ] **Actualizar el CV enlazado en «Mi CV»** (Google Drive), que es público:
+      quitar los teléfonos y correos de las referencias («Referencias disponibles
+      a solicitud»), presentarlo como asesor inmobiliario y corredor de
+      propiedades, y cambiar el LinkedIn al nuevo. Para no cambiar el enlace, en
+      Drive use «Administrar versiones → Subir nueva versión».
 - [ ] Crear un Instagram profesional nuevo (el de Alaluf dejó de usarse) y
       agregar su botón en la carta (ver sección 3).
 - [ ] Testimonios de clientes, cuando alguno acepte darlo.
