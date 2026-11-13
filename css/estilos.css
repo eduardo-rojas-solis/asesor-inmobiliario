@@ -229,7 +229,7 @@ main,
    según el ancho de la pantalla. */
 .botones {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas parejas */
   gap: 12px;
   margin-top: 26px;
 }
