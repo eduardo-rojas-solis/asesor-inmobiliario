@@ -128,7 +128,7 @@ Calendar: agenda de citas → **Compartir** → **Insertar agenda**.
 aparecen en la carta (bajo la foto y en el botón de WhatsApp) y en Contacto.
 En cada lugar cambie el enlace (dentro de `href="..."`) y el texto que se ve.
 En el enlace de WhatsApp el número va sin `+`, sin espacios ni guiones:
-`https://wa.me/56932942338`. En el correo de la carta hay un `<wbr>` antes de
+`https://wa.me/56956505032`. En el correo de la carta hay un `<wbr>` antes de
 la `@`: sirve para que el correo se corte bien en teléfonos; consérvelo.
 
 ---
