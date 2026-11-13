@@ -204,8 +204,9 @@ La página se publica gratis con **GitHub Pages**. Funciona así:
 - Cada vez que se guarda un cambio («Commit changes») en la rama `main`,
   GitHub actualiza la página **automáticamente** en uno o dos minutos.
 - No hay que instalar nada ni pagar nada.
+- El repositorio es https://github.com/eduardo-rojas-solis/asesor-inmobiliario
 - La dirección de la página es:
-  `https://NOMBRE-DE-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/`
+  **https://eduardo-rojas-solis.github.io/asesor-inmobiliario/**
 
 **Ver la página en el computador sin publicarla:** descargue el repositorio
 y haga doble clic en `index.html`. Se abrirá en el navegador.
@@ -227,23 +228,25 @@ Esto lo hace la persona dueña del repositorio:
 **Requisito:** en una cuenta gratuita de GitHub, el repositorio debe ser
 **público** para usar GitHub Pages.
 
-### Después de transferir el repositorio a la cuenta de Eduardo
+### Si algún día cambia la cuenta o el nombre del repositorio
 
-- La dirección cambia al nuevo nombre de usuario:
-  `https://USUARIO-DE-EDUARDO.github.io/NOMBRE-DEL-REPOSITORIO/`.
+El repositorio ya está en la cuenta de Eduardo (`eduardo-rojas-solis`). Si en
+el futuro se cambia de cuenta o de nombre:
+
+- La dirección de la página cambia: `https://CUENTA.github.io/NOMBRE/`.
   **La dirección antigua deja de funcionar y no redirige**, así que hay que
   actualizarla donde se haya compartido (redes, firma de correo, tarjetas).
-- Revise **Settings → Pages** en la cuenta nueva y confirme que sigue activado.
+- Revise **Settings → Pages** y confirme que sigue activado.
 - La página no necesita ningún otro cambio, porque todas sus rutas son relativas.
-- Si ya se había registrado en Google Search Console (ver abajo), hay que
-  registrar la **dirección nueva** y repetir los pasos.
+- Hay que volver a subir la tarjeta del repositorio y registrar la dirección
+  nueva en Google Search Console (ver abajo).
 
 ### Tarjeta del repositorio en GitHub
 
 Cuando se comparte el enlace del repositorio, GitHub muestra una imagen de
 vista previa. La tarjeta de Eduardo está en `assets/social/tarjeta-github.png`
 (1280 × 640 píxeles, menos de 1 MB). GitHub no la toma sola: hay que subirla
-una vez, y otra vez después de transferir el repositorio:
+una vez desde la cuenta de Eduardo:
 
 1. En el repositorio, entre a **Settings** (Configuración) → **General**.
 2. Baje hasta **Social preview** y haga clic en **Edit → Upload an image…**.
@@ -257,7 +260,7 @@ La página ya permite que Google la muestre. Para que la encuentre antes:
 1. Entre a https://search.google.com/search-console con la cuenta de Google de
    Eduardo.
 2. Elija **Agregar propiedad → Prefijo de URL** y pegue la dirección completa
-   de la página, terminada en `/`.
+   de la página: `https://eduardo-rojas-solis.github.io/asesor-inmobiliario/`.
 3. Como método de verificación, elija **Etiqueta HTML**. Google entrega una
    línea parecida a `<meta name="google-site-verification" content="...">`.
    Péguela en `index.html`, dentro de `<head>` (por ejemplo, bajo la línea del
@@ -266,9 +269,6 @@ La página ya permite que Google la muestre. Para que la encuentre antes:
 4. En **Inspección de URLs**, pegue la dirección y presione
    **Solicitar indexación**.
 5. Google puede tardar desde unos días hasta algunas semanas en mostrarla.
-
-**Conviene hacerlo después de transferir el repositorio**, porque la dirección
-cambia y habría que repetirlo.
 
 Ayuda también:
 
@@ -295,7 +295,9 @@ agenda (Google Calendar de eduardorojas.s@gmail.com) y LinkedIn.
       se consulta por WhatsApp. Mostrar cada propiedad con fotos y precio queda
       para la futura plataforma inmobiliaria (Etapa 4 del proyecto).
 - [ ] Registrar la página en Google Search Console (ver sección 7,
-      «Aparecer en Google»), idealmente después de transferir el repositorio.
+      «Aparecer en Google»).
+- [ ] Subir la tarjeta del repositorio en **Settings → Social preview**
+      (ver sección 7, «Tarjeta del repositorio en GitHub»).
 - [ ] Actualizar el LinkedIn de Eduardo (titular y «Acerca de») para que diga
       lo mismo que la página: asesor inmobiliario y corredor de propiedades en Valdivia.
 - [ ] Crear un Instagram profesional nuevo (el de Alaluf dejó de usarse) y
