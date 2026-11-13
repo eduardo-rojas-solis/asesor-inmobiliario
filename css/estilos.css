@@ -380,7 +380,9 @@ main,
   color: var(--color-acento);
 }
 
-/* --------------------- 3. SERVICIOS -------------------- */
+/* ------------ 3. PORTAFOLIO: usa los estilos generales ------------ */
+
+/* --------------------- 4. SERVICIOS -------------------- */
 /* Las tarjetas se ordenan en 2 columnas en computador y 1 en teléfono */
 .servicios {
   display: grid;
@@ -410,7 +412,7 @@ main,
   margin-bottom: 0;
 }
 
-/* --------------------- 4. CONTACTO --------------------- */
+/* --------------------- 5. CONTACTO --------------------- */
 .contacto__dato a {
   font-weight: 600;
   color: var(--color-acento);
