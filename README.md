@@ -1,6 +1,7 @@
 # Página web de Eduardo Rojas Solís
 
-Página personal de **Eduardo Rojas Solís, asesor inmobiliario en Valdivia**.
+Página personal de **Eduardo Rojas Solís, asesor inmobiliario y corredor de
+propiedades en Valdivia**.
 Todas las secciones tienen contenido real. Si en el futuro falta algún dato,
 se marca en la página con **fondo amarillo** y el texto `[PENDIENTE: ...]`.
 
@@ -36,13 +37,15 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 | `assets/logos/` | Logotipo, cuando exista | Más adelante |
 | `README.md` | Esta guía | No es necesario |
 
-La página tiene cuatro partes, en este orden:
+La página tiene cinco partes, en este orden:
 
 1. **Carta de presentación** (primera pantalla): foto con correo y WhatsApp
-   debajo, nombre, frase y botones de agenda y redes profesionales.
-2. **Sobre mí:** trayectoria y datos breves.
-3. **Servicios:** tarjetas con cada servicio.
-4. **Contacto:** correo, WhatsApp y la agenda de Google Calendar insertada en la página.
+   debajo, nombre, frase y botones de agenda, WhatsApp, LinkedIn y propiedades.
+2. **Sobre mí:** trayectoria, cómo trabaja y datos breves.
+3. **Portafolio de propiedades:** tipos de propiedades en venta y arriendo, y un
+   botón que abre WhatsApp con un mensaje ya escrito para consultar las disponibles.
+4. **Servicios:** tarjetas con cada servicio.
+5. **Contacto:** correo, WhatsApp y la agenda de Google Calendar insertada en la página.
 
 Dentro de `index.html`, cada lugar que se puede editar tiene un comentario
 que empieza con ✏️ y explica qué hacer. Los comentarios **no aparecen** en la
@@ -82,7 +85,7 @@ página publicada.
 
 ## 3. Activar un botón
 
-Todos los botones están activos: agenda, WhatsApp, LinkedIn y «Ver servicios».
+Todos los botones están activos: agenda, WhatsApp, LinkedIn y «Ver propiedades».
 Están en la carta de presentación, al comienzo de `index.html`.
 
 **Para agregar una red nueva** (por ejemplo, si más adelante abre un Instagram
@@ -269,19 +272,19 @@ Ayuda también:
 redactaron a partir de las respuestas y el CV de Eduardo.
 
 **Datos completados:** fotografía, frase de presentación, Sobre mí (presentación,
-cómo trabaja, zona, propiedades, experiencia y formación), cuatro servicios,
-correo, WhatsApp, agenda (Google Calendar) y LinkedIn.
+cómo trabaja, zona, propiedades, experiencia y formación), portafolio de
+propiedades, cuatro servicios, correo (eduardorojas.s@gmail.com), WhatsApp,
+agenda (Google Calendar de eduardorojas.s@gmail.com) y LinkedIn.
 
 **Otros pendientes (no se ven en la página):**
 
-- [ ] **Agenda:** migrarla a la cuenta eduardorojas.s@gmail.com. La agenda
-      nueva tendrá **otro enlace**: hay que cambiarlo en los dos botones y en el
-      `src="..."` del `<iframe>` (ver sección 3). Aprovechar de cambiar el título
-      («Corredor de propiedades» → «Asesor inmobiliario»).
+- [ ] **Propiedades una por una:** hoy el portafolio se describe en general y
+      se consulta por WhatsApp. Mostrar cada propiedad con fotos y precio queda
+      para la futura plataforma inmobiliaria (Etapa 4 del proyecto).
 - [ ] Registrar la página en Google Search Console (ver sección 7,
       «Aparecer en Google»), idealmente después de transferir el repositorio.
 - [ ] Actualizar el LinkedIn de Eduardo (titular y «Acerca de») para que diga
-      lo mismo que la página: asesor inmobiliario en Valdivia.
+      lo mismo que la página: asesor inmobiliario y corredor de propiedades en Valdivia.
 - [ ] Crear un Instagram profesional nuevo (el de Alaluf dejó de usarse) y
       agregar su botón en la carta (ver sección 3).
 - [ ] Testimonios de clientes, cuando alguno acepte darlo.
@@ -323,5 +326,5 @@ Este repositorio es **público**: cualquier persona puede ver todo lo que se sub
   solo para el efecto decorativo. Sin frameworks, librerías ni compilación.
 - Única carga externa: la fuente DM Sans desde Google Fonts.
 - Todas las rutas son relativas; el sitio no depende del usuario ni de la URL final.
-- Las secciones del HTML y del CSS están numeradas igual (1 a 4).
+- Las secciones del HTML y del CSS están numeradas igual (1 a 5).
 - `PLAN-PRIVADO.md` (plan interno del proyecto) está en `.gitignore` y no se sube.
