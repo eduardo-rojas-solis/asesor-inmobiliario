@@ -17,7 +17,7 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 4. [Cambiar la foto](#4-cambiar-la-foto)
 5. [Cambiar los colores](#5-cambiar-los-colores)
 6. [Cómo se publica la página](#6-cómo-se-publica-la-página)
-7. [Activar GitHub Pages (una sola vez)](#7-activar-github-pages-una-sola-vez)
+7. [Activar GitHub Pages y aparecer en Google](#7-activar-github-pages-una-sola-vez)
 8. [Lista de datos pendientes](#8-lista-de-datos-pendientes)
 9. [Opciones a evaluar](#9-opciones-a-evaluar)
 10. [Seguridad: qué nunca subir](#10-seguridad-qué-nunca-subir)
@@ -231,6 +231,35 @@ Esto lo hace la persona dueña del repositorio:
   actualizarla donde se haya compartido (redes, firma de correo, tarjetas).
 - Revise **Settings → Pages** en la cuenta nueva y confirme que sigue activado.
 - La página no necesita ningún otro cambio, porque todas sus rutas son relativas.
+- Si ya se había registrado en Google Search Console (ver abajo), hay que
+  registrar la **dirección nueva** y repetir los pasos.
+
+### Aparecer en Google
+
+La página ya permite que Google la muestre. Para que la encuentre antes:
+
+1. Entre a https://search.google.com/search-console con la cuenta de Google de
+   Eduardo.
+2. Elija **Agregar propiedad → Prefijo de URL** y pegue la dirección completa
+   de la página, terminada en `/`.
+3. Como método de verificación, elija **Etiqueta HTML**. Google entrega una
+   línea parecida a `<meta name="google-site-verification" content="...">`.
+   Péguela en `index.html`, dentro de `<head>` (por ejemplo, bajo la línea del
+   `<title>`), guarde el cambio, espere 2 minutos y presione **Verificar**.
+   Esa línea no es secreta: puede quedar en el repositorio público.
+4. En **Inspección de URLs**, pegue la dirección y presione
+   **Solicitar indexación**.
+5. Google puede tardar desde unos días hasta algunas semanas en mostrarla.
+
+**Conviene hacerlo después de transferir el repositorio**, porque la dirección
+cambia y habría que repetirlo.
+
+Ayuda también:
+
+- Poner el enlace de la página en LinkedIn, Instagram y la firma del correo.
+- Crear un **Perfil de Empresa en Google** (gratis), indicando la zona de
+  atención en vez de la dirección. Es lo que aparece en Google Maps y en
+  búsquedas como «asesor inmobiliario Valdivia».
 
 ---
 
@@ -245,14 +274,16 @@ correo, WhatsApp, agenda (Google Calendar) y LinkedIn.
 
 **Otros pendientes (no se ven en la página):**
 
-- [ ] Que Eduardo revise y apruebe los textos.
-- [ ] Cuando los apruebe, **borrar** en `index.html` la línea
-      `<meta name="robots" content="noindex">`. Mientras esa línea exista,
-      Google no mostrará la página en sus resultados.
+- [ ] **Agenda:** migrarla a la cuenta eduardorojas.s@gmail.com. La agenda
+      nueva tendrá **otro enlace**: hay que cambiarlo en los dos botones y en el
+      `src="..."` del `<iframe>` (ver sección 3). Aprovechar de cambiar el título
+      («Corredor de propiedades» → «Asesor inmobiliario»).
+- [ ] Registrar la página en Google Search Console (ver sección 7,
+      «Aparecer en Google»), idealmente después de transferir el repositorio.
 - [ ] Actualizar el LinkedIn de Eduardo (titular y «Acerca de») para que diga
       lo mismo que la página: asesor inmobiliario en Valdivia.
-- [ ] Cambiar en Google Calendar el título de la agenda de citas
-      («Corredor de propiedades» → «Asesor inmobiliario»).
+- [ ] Crear un Instagram profesional nuevo (el de Alaluf dejó de usarse) y
+      agregar su botón en la carta (ver sección 3).
 - [ ] Testimonios de clientes, cuando alguno acepte darlo.
 - [ ] Dirección de la oficina, cuando se pueda publicar.
 - [ ] Logotipo (carpeta `assets/logos/`).
