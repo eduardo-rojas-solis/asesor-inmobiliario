@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Ícono de la pestaña: E blanca sobre fondo celeste.
+       ✏️ Para cambiar el celeste, edite el color fill="#4DB2E6". -->
+  <rect width="64" height="64" rx="14" fill="#4DB2E6"/>
+  <!-- La E está dibujada con rectángulos (no depende de ninguna fuente) -->
+  <path fill="#FFFFFF" d="M20 14h25v8H29v6h14v8H29v6h16v8H20z"/>
+</svg>

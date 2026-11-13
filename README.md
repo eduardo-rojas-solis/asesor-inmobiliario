@@ -34,7 +34,7 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 | `js/particulas.js` | Partículas de luz en movimiento | No es necesario |
 | `assets/perfil/` | Fotografía de perfil | Sí (para cambiar la foto) |
 | `assets/fondos/` | Foto de fondo (río de Valdivia) | Sí (para cambiar el fondo) |
-| `assets/logos/` | Logotipo, cuando exista | Más adelante |
+| `assets/logos/` | Ícono de la pestaña (E blanca sobre celeste) y, más adelante, el logotipo | Ver `assets/logos/LEEME.md` |
 | `assets/social/` | Tarjeta para compartir el repositorio en redes (1280 × 640) | No es necesario |
 | `README.md` | Esta guía | No es necesario |
 
