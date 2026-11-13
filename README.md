@@ -1,9 +1,8 @@
 # Página web de Eduardo Rojas Solís
 
-Página personal de **Eduardo Rojas Solís, corredor de propiedades**.
-Es una primera versión: todas las secciones existen, pero varios datos
-todavía faltan y aparecen en la página con **fondo amarillo** y el texto
-`[PENDIENTE: ...]`.
+Página personal de **Eduardo Rojas Solís, asesor inmobiliario en Valdivia**.
+Todas las secciones tienen contenido real. Si en el futuro falta algún dato,
+se marca en la página con **fondo amarillo** y el texto `[PENDIENTE: ...]`.
 
 Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 **sin saber programar**, directamente desde la página de GitHub.
@@ -83,29 +82,28 @@ página publicada.
 
 ## 3. Activar un botón
 
-El correo, WhatsApp, la agenda, LinkedIn e Instagram ya están activos. Solo
-el botón de **Facebook** sigue **desactivado** (no se puede presionar) hasta
-que exista el enlace real. Los botones de redes están en la carta de
-presentación, al comienzo de `index.html`. Para activar uno:
+Todos los botones están activos: agenda, WhatsApp, LinkedIn y «Ver servicios».
+Están en la carta de presentación, al comienzo de `index.html`.
 
-1. Quite `boton--pendiente` y `aria-disabled="true"`.
-2. Agregue `href="..."` con el enlace, y `target="_blank" rel="noopener"` para
-   que se abra en una pestaña nueva.
-3. Borre la línea pequeña `<small>[PENDIENTE: ...]</small>`.
+**Para agregar una red nueva** (por ejemplo, si más adelante abre un Instagram
+o una página de Facebook profesional), copie el bloque de LinkedIn, péguelo
+debajo y cambie el enlace y el nombre:
+```html
+<a class="boton" href="https://www.instagram.com/su-cuenta/" target="_blank" rel="noopener">
+  Instagram
+</a>
+```
 
-**Ejemplo con Facebook. Antes:**
+**Si un enlace todavía no existe**, el botón se puede dejar visible pero
+desactivado, con un aviso amarillo:
 ```html
 <a class="boton boton--pendiente" aria-disabled="true">
-  Facebook <small>[PENDIENTE: enlace a la página]</small>
+  Instagram <small>[PENDIENTE: enlace a la cuenta]</small>
 </a>
 ```
-**Después:**
-```html
-<a class="boton" href="https://www.facebook.com/su-pagina" target="_blank" rel="noopener">
-  Facebook
-</a>
-```
-(Puede guiarse por los botones de LinkedIn e Instagram, que ya están activos.)
+Para activarlo después: quite `boton--pendiente` y `aria-disabled="true"`,
+agregue `href="..."` con el enlace y `target="_blank" rel="noopener"`, y borre
+la línea `<small>[PENDIENTE: ...]</small>`.
 
 **Agenda (Google Calendar).** Está en dos formas:
 
@@ -238,31 +236,27 @@ Esto lo hace la persona dueña del repositorio:
 
 ## 8. Lista de datos pendientes
 
-Todos aparecen en la página con fondo amarillo. Para encontrarlos en
-`index.html`, busque la palabra `PENDIENTE`.
+**Ya no quedan marcadores `[PENDIENTE]` en la página.** Todos los textos se
+redactaron a partir de las respuestas y el CV de Eduardo.
 
-| Sección | Dato pendiente |
-|---|---|
-| Carta | Frase breve de presentación (1 o 2 líneas) |
-| Sobre mí | Descripción de la trayectoria como corredor de propiedades |
-| Sobre mí | Años de experiencia en el rubro |
-| Sobre mí | Zona de trabajo (ciudades o comunas) |
-| Sobre mí | Tipos de propiedades con que trabaja |
-| Servicios | Nombre y descripción del servicio 1 |
-| Servicios | Nombre y descripción del servicio 2 |
-| Servicios | Nombre y descripción del servicio 3 |
-| Carta | Enlace a Facebook |
-
-**Datos ya completados:** fotografía, correo, WhatsApp, agenda (Google Calendar),
-LinkedIn e Instagram.
+**Datos completados:** fotografía, frase de presentación, Sobre mí (presentación,
+cómo trabaja, zona, propiedades, experiencia y formación), cuatro servicios,
+correo, WhatsApp, agenda (Google Calendar) y LinkedIn.
 
 **Otros pendientes (no se ven en la página):**
 
-- [ ] Logotipo (carpeta `assets/logos/`).
-- [ ] Colores definitivos de la marca (ver sección 5).
-- [ ] Cuando ya no queden datos pendientes, **borrar** en `index.html` la línea
+- [ ] Que Eduardo revise y apruebe los textos.
+- [ ] Cuando los apruebe, **borrar** en `index.html` la línea
       `<meta name="robots" content="noindex">`. Mientras esa línea exista,
       Google no mostrará la página en sus resultados.
+- [ ] Actualizar el LinkedIn de Eduardo (titular y «Acerca de») para que diga
+      lo mismo que la página: asesor inmobiliario en Valdivia.
+- [ ] Cambiar en Google Calendar el título de la agenda de citas
+      («Corredor de propiedades» → «Asesor inmobiliario»).
+- [ ] Testimonios de clientes, cuando alguno acepte darlo.
+- [ ] Dirección de la oficina, cuando se pueda publicar.
+- [ ] Logotipo (carpeta `assets/logos/`).
+- [ ] Colores definitivos de la marca (ver sección 5).
 
 ---
 
