@@ -35,6 +35,7 @@ Esta guía está escrita para Eduardo: explica cómo cambiar textos y la foto
 | `assets/perfil/` | Fotografía de perfil | Sí (para cambiar la foto) |
 | `assets/fondos/` | Foto de fondo (río de Valdivia) | Sí (para cambiar el fondo) |
 | `assets/logos/` | Logotipo, cuando exista | Más adelante |
+| `assets/social/` | Tarjeta para compartir el repositorio en redes (1280 × 640) | No es necesario |
 | `README.md` | Esta guía | No es necesario |
 
 La página tiene cinco partes, en este orden:
@@ -236,6 +237,18 @@ Esto lo hace la persona dueña del repositorio:
 - La página no necesita ningún otro cambio, porque todas sus rutas son relativas.
 - Si ya se había registrado en Google Search Console (ver abajo), hay que
   registrar la **dirección nueva** y repetir los pasos.
+
+### Tarjeta del repositorio en GitHub
+
+Cuando se comparte el enlace del repositorio, GitHub muestra una imagen de
+vista previa. La tarjeta de Eduardo está en `assets/social/tarjeta-github.png`
+(1280 × 640 píxeles, menos de 1 MB). GitHub no la toma sola: hay que subirla
+una vez, y otra vez después de transferir el repositorio:
+
+1. En el repositorio, entre a **Settings** (Configuración) → **General**.
+2. Baje hasta **Social preview** y haga clic en **Edit → Upload an image…**.
+3. Elija el archivo `tarjeta-github.png` (descárguelo antes desde
+   `assets/social/`) y guarde.
 
 ### Aparecer en Google
 
